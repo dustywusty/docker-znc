@@ -4,9 +4,6 @@ RUN apt-get update -y && apt-get -y install znc
 
 RUN adduser --disabled-password --disabled-login znc
 
-ADD start-znc /usr/local/bin/
-RUN chmod +x /usr/local/bin/start-znc
-
 ADD znc.conf.default /src/
 
 RUN mkdir -p /home/znc/.znc/configs
