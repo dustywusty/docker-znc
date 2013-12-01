@@ -14,6 +14,8 @@ Listener4    = 6667
 ConnectDelay = 5
 ServerThrottle = 30
 
+LoadModule = adminlog
+
 <User dustywusty>
         Pass = sha256#b6fd516537382fbb025b8264521aa2f632757e1baa8106f595be9dea673e462f#cKFo1wSTUiyrr5G1ZcDG#
         Nick = dustywusty
