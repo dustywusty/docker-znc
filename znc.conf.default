@@ -1,0 +1,35 @@
+Version = 1.0
+<Listener l>
+	Port = 6667
+	IPv4 = true
+	IPv6 = true
+	SSL = false
+</Listener>
+
+<User admin>
+	Pass			= sha256#f0017de9f85d284b7680a6fc94b3ef9e3bb880981cee3d5097809590db1eeed1#!iXH(X?p8)D-:119+?KL#
+	Admin      		= true
+	Nick       		= dustywusty 
+	AltNick    = dustywusty_
+	Ident      = dustywusty
+	RealName   = dusty
+	Buffer     = 5000
+	AutoClearChanBuffer = true
+	ChanModes  = +stn
+	MultiClients = true
+
+	<Network freenode>
+		LoadModule = chanserver
+		LoadModule = keepnick
+		LoadModule = kickrejoin
+		LoadModule = nickserv
+		LoadModule = perform
+		LoadModule = savebuff
+		LoadModule = simple_away
+
+		Server		= irc.freenode.net +6697
+
+		<Chan ##gengen>
+		</Chan>
+	</Network>
+</User>
