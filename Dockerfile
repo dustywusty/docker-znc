@@ -10,7 +10,7 @@ RUN mkdir -p /home/znc/.znc/configs
 RUN mv /src/znc.conf /home/znc/.znc/configs/
 RUN chown -R znc:znc /home/znc/.znc
 
-ENTRYPOINT ["znc", "--foreground",  "--datadir=/home/znc/.znc/"]
+ENTRYPOINT ["znc", "--foreground", "--datadir=/home/znc/.znc/"]
 
 USER znc
 
