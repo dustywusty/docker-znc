@@ -1,4 +1,4 @@
-# ..
+# docker-znc
 
 ### Update packages
 
