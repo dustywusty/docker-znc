@@ -42,3 +42,10 @@ grub-legacy-ec2 is a package which provides the update-grub interface to generat
 
 ~~~
  root@host:~# wget -qO- https://get.docker.io/ | sh
+~~~
+
+* Checkout and build
+
+~~~
+ root@host:~# docker build  -t dusty-vnc -rm .
+~~~
