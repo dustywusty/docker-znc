@@ -1,51 +1,24 @@
-# docker-znc
+docker-znc
+==============
 
-### Update packages
-
-~~~
-root@host:~# apt-get update
-~~~
-
-### Install Docker (Linode) Ubuntu 12.04 Precise
-
-* Install the virtual kernel metapackage and the bootloader configuration:
+## Install Docker (Linode) Ubuntu 14.04
 
 ~~~
-root@host:~# apt-get install linux-virtual grub-legacy-ec2
+apt-get update
+apt-get install docker.io
 ~~~
 
-grub-legacy-ec2 is a package which provides the update-grub interface to generate /boot/grub/menu.lst, but does not actually contain a GRUB bootloader, and is suitable for any PV-GRUB installation (despite the "ec2" name).
+## Install docker-znc
 
-* Edit /boot/grub/menu.lst, and look for a line similar to:
-
-~~~
- # defoptions=console=hvc0
-~~~
-
-* Append "rootflags=nobarrier" to this line (do not uncomment the line):
+##### I personally like a shorter alias
 
 ~~~
- # defoptions=console=hvc0 rootflags=nobarrier
+echo 'alias d=docker.io' >> .profile
+source ~/.profile
 ~~~
 
-"nobarrier" is needed as barriers are default mount options for ext3/4 as of Linux 3.2, yet they do not always play well with Xen.
-
-* Regenerate /boot/grub/menu.lst:
+##### Build our docker image
 
 ~~~
- root@host:~# update-grub-legacy-ec2
-~~~
-
-* Update your Linode profile, disable "Xenify Distro", and set the kernel to "pv-grub-x86_32" or "pv-grub-x86_64" depending on your installation, then reboot the profile.
-
-* Install docker
-
-~~~
- root@host:~# wget -qO- https://get.docker.io/ | sh
-~~~
-
-* Checkout and build
-
-~~~
- root@host:~# docker build  -t dusty-vnc -rm .
+d build -t dusty/znc github.com/clarkda/docker-znc.git
 ~~~
