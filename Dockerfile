@@ -1,4 +1,5 @@
 FROM ubuntu:14.04
+
 MAINTAINER Dustin Clark "dusty@clarkda.com"
 
 RUN apt-get update -y && apt-get -y install znc
@@ -15,4 +16,4 @@ USER znc
 
 EXPOSE 6667
 
-CMD['start-znc']
+CMD ["start-znc"]
