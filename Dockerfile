@@ -3,8 +3,6 @@ MAINTAINER Dustin Clark "dusty@clarkda.com"
 
 RUN apt-get update -y && apt-get -y install znc
 
-ADD znc.conf /src/
-
 ADD scripts/start-znc.sh /usr/local/bin/start-znc
 ADD conf/znc.conf  /opt/znc/configs/znc.conf
 
