@@ -16,4 +16,5 @@ USER znc
 
 EXPOSE 6667
 
-CMD ["start-znc"]
+ENTRYPOINT  ["/usr/local/bin/start-znc"]
+CMD         [""]
