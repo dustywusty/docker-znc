@@ -14,28 +14,28 @@ set_env () {
 	while [ -z "${znc_user}" ]; do
 	        read -p "znc user: " temp_znc_user
 	        if [ ! -z ${temp_znc_user} ]; then
-	        	znc_user=temp_znc_user
+	        	znc_user=${temp_znc_user}
 	        fi
 	done
 
 	while [ -z "${znc_pass}" ]; do
 	        read -p "znc pass: " temp_znc_pass
 	        if [ ! -z ${temp_znc_pass} ]; then
-	        	znc_pass=temp_znc_pass
+	        	znc_pass=${temp_znc_pass}
 	        fi
 	done
 
 	while [ -z "${irc_server}" ]; do
 	        read -p "irc server: " temp_irc_server
 	        if [ ! -z ${temp_irc_server} ]; then
-	        	irc_server=temp_irc_server
+	        	irc_server=${temp_irc_server}
 	        fi
 	done
 
 	while [ -z "${irc_port}" ]; do
 	        read -p "irc port: " temp_irc_port
 	        if [ ! -z ${temp_irc_port} ]; then
-	        	irc_port=temp_irc_port
+	        	irc_port=${temp_irc_port}
 	        fi
 	done	
 
