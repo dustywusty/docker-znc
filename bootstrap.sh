@@ -46,7 +46,7 @@ set_env () {
 
 save_env () {
 	while true; do
-	    read -p $'\n'"save and build docker image? y/n " yn $'\n'
+	    read -p "save and build docker image? y/n " yn
 	    case $yn in
 	        [Yy]* ) build_image_start_container; break;;
 	        [Nn]* ) exit;;
