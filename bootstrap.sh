@@ -64,4 +64,6 @@ build_image_start_container () {
 
 # ..
 
+command -v docker.io >/dev/null 2>&1 || { echo -e >&2 "I require docker but it's not installed. \n\nAborting!\n"; exit 1; }
+
 set_env
