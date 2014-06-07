@@ -2,19 +2,16 @@ FROM ubuntu:14.04
 
 MAINTAINER Dustin Clark "dusty@clarkda.com"
 
-RUN apt-get update -y && apt-get -y install supervisord znc
+RUN apt-get update && apt-get install -y \
+	supervisor \
+	znc
 
-#ADD scripts/start-znc.sh /usr/local/bin/start-znc
-#ADD conf/znc.conf  /opt/znc/configs/znc.conf
+ADD conf/znc.conf  /opt/znc/configs/znc.conf
 
-#RUN chmod +x /usr/local/bin/start-znc 
+ADD supervisor /etc/supervisor
+RUN chmod +x /etc/supervisor/scripts/pre-start.sh
 
-RUN useradd znc
-RUN chown -R znc:znc /opt/znc
+EXPOSE 22 6667
 
-USER znc
+CMD ["/usr/bin/supervisord"]
 
-EXPOSE 6667
-
-ENTRYPOINT  ["/usr/local/bin/start-znc"]
-CMD         [""]
