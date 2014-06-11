@@ -2,7 +2,7 @@ namespace :znc do
   # -------------------------------------------------
   # build
   # -------------------------------------------------
-  desc 'build docker image'
+  desc 'build docker test image'
   task :build do
     `docker.io build -t dusty/docker-znc-test ..`
   end
@@ -10,7 +10,7 @@ namespace :znc do
   # -------------------------------------------------
   # clean
   # -------------------------------------------------
-
+  desc 'delete docker test image'
   task :clean do
     # ..
   end
@@ -18,7 +18,7 @@ namespace :znc do
   # -------------------------------------------------
   # test
   # -------------------------------------------------
-
+  desc 'run tests'
   task :test do
     # ..
   end
